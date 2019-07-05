@@ -14,15 +14,13 @@
     "type": "git",
     "url": "{{repository}}"
   },
-  "keywords": [
-
-  ],
+  "keywords": [],
   "author": "{{{author}}}",
   "license": "{{license}}",
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.7",
     "chai": "^4.2.0",
-    "tacer-template-lib": "^0.2.0"
+    "tacer-template-bin": "^0.2.0"
   }
 }
