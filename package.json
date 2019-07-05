@@ -1,0 +1,29 @@
+{
+  "name": "tacer-template-bin",
+  "version": "0.1.0",
+  "description": "A tacer template for creating an executable project.",
+  "bin": {
+    "generate": "bin/generate.js",
+    "tacer-script": "bin/script.js"
+  },
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IdanLoo/tacer-template-bin"
+  },
+  "keywords": [],
+  "author": "Idan Loo <im@siwei.lu>",
+  "license": "MIT",
+  "dependencies": {
+    "rollup": "^1.16.4",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-terser": "^5.1.0",
+    "rollup-plugin-typescript2": "^0.21.2",
+    "tacer-seed": "^0.1.0",
+    "ts-mocha": "^6.0.0",
+    "mocha": "^6.1.4",
+    "typescript": "^3.5.2"
+  }
+}
