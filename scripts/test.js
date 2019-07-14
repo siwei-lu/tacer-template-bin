@@ -1,9 +1,8 @@
 const { spawn } = require('child_process')
 
 function test() {
-  spawn('ts-mocha', ['--paths', `test/index.ts`, `test/**/*.ts`], {
+  spawn('jest', {
     stdio: 'inherit',
-    cwd: process.cwd(),
   })
 }
 

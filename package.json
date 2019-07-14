@@ -7,7 +7,7 @@
     "tacer-script": "bin/script.js"
   },
   "scripts": {
-    "test": ""
+    "build": "tacer-publish"
   },
   "repository": {
     "type": "git",
@@ -17,13 +17,13 @@
   "author": "Idan Loo <im@siwei.lu>",
   "license": "MIT",
   "dependencies": {
+    "fs-extra": "^8.1.0",
+    "jest": "^24.8.0",
     "rollup": "^1.16.4",
     "rollup-plugin-auto-external": "^2.0.0",
     "rollup-plugin-terser": "^5.1.0",
     "rollup-plugin-typescript2": "^0.21.2",
-    "tacer-seed": "^0.1.0",
-    "ts-mocha": "^6.0.0",
-    "mocha": "^6.1.4",
+    "tacer-seed": "^0.2.3",
     "typescript": "^3.5.2"
   }
 }
