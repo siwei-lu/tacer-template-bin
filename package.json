@@ -1,6 +1,6 @@
 {
   "name": "tacer-template-bin",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A tacer template for creating an executable project.",
   "bin": {
     "generate": "bin/generate.js",
