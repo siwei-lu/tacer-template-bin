@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const { resolve } = require('path')
-const { generate } = require('tacer-seed')
+const generate = require('tacer-seed').default
 
-const path = resolve(__dirname, '../template')
+const path = resolve(__dirname, '../template.zip')
 
-generate('seed', path, process.argv[2])
+generate('tacer-template-bin', path, process.argv[2])
