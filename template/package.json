@@ -1,0 +1,23 @@
+{
+  "name": "template",
+  "version": "0.1.0",
+  "description": "Say something",
+  "bin": {
+    "bin": "./bin/run.js"
+  },
+  "main": "dist/index.js",
+  "types": "types/",
+  "scripts": {
+    "start": "tacer-script start",
+    "build": "tacer-script build",
+    "test": "tacer-script test"
+  },
+  "author": "Idan Loo <im@siwei.lu>",
+  "license": "MIT",
+  "devDependencies": {
+    "tacer-template-bin": "file:.."
+  },
+  "dependencies": {
+    "@types/jest": "^24.0.15"
+  }
+}
