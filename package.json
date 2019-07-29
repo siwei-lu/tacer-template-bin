@@ -1,6 +1,6 @@
 {
   "name": "tacer-template-bin",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Create a node binary using tacer.",
   "bin": {
     "tacer-script": "./bin/script.js"
