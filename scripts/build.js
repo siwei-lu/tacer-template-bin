@@ -9,7 +9,7 @@ const distPath = resolve(`${process.cwd()}/dist/index.js`)
 const cacheRoot = resolve(__dirname, '../.cache')
 
 const tsconfigDefaults = {
-  exclude: ['__tests__/'],
+  exclude: ['__tests__/', 'types/'],
 }
 
 const plugins = [
@@ -17,14 +17,14 @@ const plugins = [
   typescript({
     cacheRoot,
     tsconfigDefaults,
+    useTsconfigDeclarationDir: true,
   }),
 ]
 
 const output = { file: distPath, format: 'cjs' }
 
-function build({ isDev = false, dist = distPath } = {}) {
+function build({ isDev = false } = {}) {
   if (isDev) {
-    output.file = dist
     output.sourcemap = 'inline'
     process.env.NODE_ENV = process.env.NODE_ENV | 'development'
   } else {
@@ -34,9 +34,7 @@ function build({ isDev = false, dist = distPath } = {}) {
   return rollup({
     input: entrypoint,
     plugins,
-  })
-    .then(bundle => bundle.write(output))
-    .then(() => dist)
+  }).then(bundle => bundle.write(output))
 }
 
 module.exports = build

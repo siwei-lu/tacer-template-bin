@@ -2,9 +2,8 @@
   "name": "template",
   "version": "0.1.0",
   "description": "Say something",
-  "bin": {
-    "bin": "./dist/index.js"
-  },
+  "main": "./dist",
+  "bin": "./bin",
   "scripts": {
     "start": "tacer-script start",
     "build": "tacer-script build",
