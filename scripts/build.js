@@ -9,22 +9,34 @@ const distPath = resolve(`${process.cwd()}/dist/index.js`)
 const cacheRoot = resolve(__dirname, '../.cache')
 
 const tsconfigDefaults = {
-  exclude: ['test/', 'types/'],
+  exclude: ['__tests__/'],
 }
 
-function build() {
+const plugins = [
+  autoExternal(),
+  typescript({
+    cacheRoot,
+    tsconfigDefaults,
+  }),
+]
+
+const output = { file: distPath, format: 'cjs' }
+
+function build({ isDev = false, dist = distPath } = {}) {
+  if (isDev) {
+    output.file = dist
+    output.sourcemap = 'inline'
+    process.env.NODE_ENV = process.env.NODE_ENV | 'development'
+  } else {
+    plugins.push(terser())
+  }
+
   return rollup({
     input: entrypoint,
-    plugins: [
-      autoExternal(),
-      typescript({
-        cacheRoot,
-        tsconfigDefaults,
-        useTsconfigDeclarationDir: true,
-      }),
-      terser(),
-    ],
-  }).then(bundle => bundle.write({ file: distPath, format: 'cjs' }))
+    plugins,
+  })
+    .then(bundle => bundle.write(output))
+    .then(() => dist)
 }
 
 module.exports = build

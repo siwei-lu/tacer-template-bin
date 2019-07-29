@@ -2,11 +2,16 @@ const { spawn } = require('child_process')
 const { resolve } = require('path')
 const build = require('./build')
 
-const bin = resolve(process.cwd(), 'bin/run.js')
+const args = process.argv.slice(3)
 
 function start() {
-  return build().then(() => {
-    spawn('node', [bin], { stdio: 'inherit' })
+  const option = {
+    isDev: true,
+    dist: resolve(__dirname, '..', '.tmp', 'index.js'),
+  }
+
+  return build(option).then(dist => {
+    spawn('node', [dist, ...args], { stdio: 'inherit' })
   })
 }
 

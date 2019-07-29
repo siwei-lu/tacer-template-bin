@@ -3,10 +3,8 @@
   "version": "0.1.0",
   "description": "Say something",
   "bin": {
-    "bin": "./bin/run.js"
+    "bin": "./dist/index.js"
   },
-  "main": "dist/index.js",
-  "types": "types/",
   "scripts": {
     "start": "tacer-script start",
     "build": "tacer-script build",

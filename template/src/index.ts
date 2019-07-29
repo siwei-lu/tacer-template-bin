@@ -1,3 +1,1 @@
-export default function run() {
-  console.log('Hello, tacer')
-}
+console.log(process.env)
