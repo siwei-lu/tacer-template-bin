@@ -1,1 +1,3 @@
-console.log('Thanks for using tacer.')
+export default function run() {
+  console.log('Hello, tacer')
+}

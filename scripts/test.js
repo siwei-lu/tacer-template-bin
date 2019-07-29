@@ -1,9 +1,10 @@
 const { spawn } = require('child_process')
+const { resolve } = require('path')
+const config = resolve(__dirname, '../jest.config.js')
 
 function test() {
-  spawn('ts-mocha', ['--paths', `test/index.ts`, `test/**/*.ts`], {
+  spawn('jest', ['-c', config], {
     stdio: 'inherit',
-    cwd: process.cwd(),
   })
 }
 
